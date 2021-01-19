@@ -17,7 +17,7 @@ df2 = df[df['DIVISION']=='1']
 df2.set_index('NAME', inplace=True)
 # grab just the population columns:
 df2 = df2[[col for col in df2.columns if col.startswith('POP')]]
-
+print(df2)
 traces=[go.Scatter(
     x = df2.columns,
     y = df2.loc[name],
@@ -30,4 +30,4 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=traces,layout=layout)
-pyo.plot(fig, filename='line3.html')
+#pyo.plot(fig, filename='line3.html')
